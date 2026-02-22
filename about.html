@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glan Farel Markus Jauply - About</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at top, #001f3f, #000814);
+            min-height: 100vh;
+            font-family: Poppins, sans-serif;
+            color: white;
+        }
+
+        .stars {
+            width: 200%;
+            height: 200%;
+            background: url('https://i.ibb.co/2YRmq3J/stars.png');
+            position: fixed;
+            top: 0;
+            left: 0;
+            opacity: 0.4;
+            animation: moveStars 60s linear infinite;
+            z-index: -1;
+        }
+
+        
+        @keyframes moveStars {
+            from { transform: translate(0,0); }
+            to { transform: translate(-500px, -800px); }
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: center;
+            z-index: 100;
+            background: rgba(130, 124, 247, 0.35);
+            backdrop-filter: blur(12px);
+        }
+
+        nav ul {
+            list-style: none; 
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: .3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #00f7ff;
+            text-shadow: 0 0 10px #00f7ff;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 8%;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            filter: brightness(100%);
+            z-index: -1;
+        }
+
+        .hero .content {
+            max-width: 700px;
+            animation: fadein 1.4s ease;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #00f7ff;
+            border-radius: 30px;
+            color: #000;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #fff;
+        }
+
+        .section {
+            padding: 120px 8%;
+            text-align: center;
+            min-height: calc(100vh - 80px);
+        }
+        
+        .grid {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            padding: 25px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            transition: .3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #00f7ff;
+            box-shadow: 0 8px 25px #00f7ff40;
+        }
+
+        .timeline {
+            border-left: 3px solid #00f7ff;
+            padding-left: 30px;
+            margin-top: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .timeline .item {
+            margin-bottom: 30px;
+            text-align: left;
+            position: relative;
+        }
+        
+        .timeline .item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: #00f7ff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00f7ff;
+        }
+
+        .timeline h3 {
+            color: #00f7ff;
+            margin-bottom: 5px;
+        }
+
+        .timeline p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 10px;
+            background: #111;
+            color: #fff;
+        }
+        
+        textarea {
+            resize: vertical;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            margin-top: 80px;
+            background: #000;
+            opacity: 0.7;
+        }
+
+        @keyframes fadein {
+            from { opacity: 0; transform: translateY(20px); }
+            to 	{ opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slide {
+            0%,20% 	{ transform: translateX(0); }
+            25%,45% 	{ transform: translateX(-100%); }
+            50%,70% 	{ transform: translateX(-200%); }
+            75%,95% 	{ transform: translateX(-300%); }
+            100% 	{ transform: translateX(0); }
+        }
+
+        .contact-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .contact-form {
+            width: 100%; 
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .skill {
+            margin-bottom: 20px;
+        }
+        
+        .skills-title {
+            margin-top: 50px;
+        }
+
+        .skill p {
+            margin: 0 0 5px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 12px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #00d9ff;
+            box-shadow: 0 0 10px #00d9ff66;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: #00d9ff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00d9ff;
+        }
+        
+        .about-flex-wrapper {
+            display: flex;
+            gap: 40px; 
+            text-align: left; 
+            align-items: flex-start; 
+            margin-top: 50px; 
+        }
+
+        .photo-column {
+            flex: 0 0 300px; 
+            max-width: 35%; 
+        }
+        
+        .photo-column img {
+            width: 100%;
+            display: block; 
+        }
+
+        .content-column {
+            flex: 1; 
+            min-width: 450px; 
+        }
+        
+        .content-column h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .content-column p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 900px) {
+            .section {
+                 padding: 80px 5%;
+            }
+            
+            .about-flex-wrapper {
+                flex-direction: column; 
+                align-items: center; 
+                gap: 20px;
+            }
+            
+            .photo-column, .content-column {
+                flex: 1 1 100%; 
+                max-width: 80%;
+                min-width: unset;
+            }
+            
+            .content-column {
+                padding-top: 20px;
+            }
+            
+            .timeline {
+                 padding-left: 20px;
+            }
+             .timeline .item::before {
+                left: -27px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="stars"></div>
+
+    
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="favorite.html">Favorite</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <section id="about" class="section">
+        <h1 style="font-size: 36px; margin-bottom: 40px; text-align: center;">About Me</h1>
+        
+        <div class="about-flex-wrapper">
+            
+            
+            <div class="photo-column">
+                <img src="image/PASSFOTO.jpg" alt="Foto Profil" style="border-radius:15px;">
+            </div>
+            
+            
+            <div class="content-column">
+                
+                <h2>Gian Farel Markus Jauply</h2>
+                <p>Halo! Saya seorang individu yang memiliki semangat kuat dalam menggabungkan aktivisme sosial dengan inovasi teknologi. Latar belakang saya sebagai alumni SMK Negeri 7 Ambon telah menuntun saya untuk aktif terlibat dalam komunitas. Salah satu komitmen utama saya adalah menjadi Pengurus Forum Anak Maluku Manise untuk periode 2023-2025, di mana saya berjuang sebagai suara dan perwakilan untuk isu-isu anak di daerah. Pengalaman ini membentuk saya menjadi seseorang yang peduli pada dampak dan solusi. Saat ini, saya mengembangkan minat tersebut di dunia digital. Saya adalah mahasiswa Program Studi Sistem Informasi di Fakultas Teknologi Informasi (FTI) Universitas Kristen Satya Wacana (UKSW). Di sini, saya fokus mempelajari bagaimana merancang, menganalisis, dan mengimplementasikan sistem informasi untuk memecahkan masalah nyata—baik itu masalah organisasi maupun masalah sosial. Visi saya adalah memanfaatkan keahlian dalam sistem informasi untuk menciptakan solusi digital yang tidak hanya efisien tetapi juga memiliki dampak positif yang nyata bagi masyarakat.</p>
+                
+                
+                <h3 class="skills-title">My Skill</h3>
+                
+                <div class="skill">
+                    <p>Web Design <span> 35%</span></p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 35%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <p>Phyton <span>75%</span></p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 75%;"></div>
+                    </div>
+                </div>
+                
+                <div class="skill">
+                    <p>Bahasa Asing (Inggris & Korea) <span>80%</span></p>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 80%;"></div>
+                    </div>
+                </div>
+                
+                
+                <h3 class="skills-title">Fun Facts</h3>
+                <p>Saya adalah seorang penggemar berat drama korea, terutama yang bertema action and comedy. Saya juga suka membuat video cover music dibeberapa kesempatan dan saya fasih dalam berbahasa korea.</p>
+                
+            </div>
+            
+        </div>
+        
+    </section>
+
+    
+    <footer>
+        <p>&copy; Gian Farel Markus Jauply| 682025078 | PTI C 2025.</p>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+</html>
